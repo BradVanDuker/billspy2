@@ -1,10 +1,9 @@
 import tkinter as tk
 
-from Views.tk_start_page import StartPage
-
 
 class TKInterInterface(tk.Tk):
     def __init__(self):
+        from Views.tk_start_page import StartPage
         super().__init__()
         # self.window.geometry('300x300')
         self._frame = None
@@ -23,6 +22,7 @@ class TKInterInterface(tk.Tk):
 
     def run(self):
         self.mainloop()
+        from Views.tk_start_page import StartPage
         self.switch_frame(StartPage)
 
 

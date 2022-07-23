@@ -105,6 +105,7 @@ class SummaryPage(tk.Frame):
         self.master.switch_frame(StartPage)
 
     def get_summary(self, bill_id):
+        # TODO:  throws an error if bill_id is not defined because no bill was selected in the list box.
         self.summarize_area.delete(1.0, 'end')
         self.summarize_area.insert(1.0, bill_id)
 

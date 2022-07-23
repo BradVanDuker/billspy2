@@ -1,10 +1,12 @@
 import tkinter as tk
 
+from Views.tkinter_interface import TKInterInterface
 from Views.tk_summary_page import SummaryPage
+from Views.tk_train_page import TrainPage
 
 
 class StartPage(tk.Frame):
-    def __init__(self, master):
+    def __init__(self, master: TKInterInterface):
         super().__init__(master)
         master.title('billspy - Main Menu')
 
@@ -16,7 +18,8 @@ class StartPage(tk.Frame):
                                     command=lambda: master.switch_frame(SummaryPage))
         get_summary_btn.grid(column=0, row=0, sticky='ew', padx=5, pady=5)
 
-        train_btn = tk.Button(self, justify='center', text='Train')
+        train_btn = tk.Button(self, justify='center', text='Train',
+                              command=lambda: master.switch_frame(TrainPage))
         train_btn.grid(column=0, row=1, sticky='ew', padx=5, pady=5)
 
         exit_btn = tk.Button(self, justify='center', text='Exit', command=self.exit_program)
@@ -25,6 +28,3 @@ class StartPage(tk.Frame):
     def exit_program(self):
         self.destroy()
         self.master.destroy()
-
-    def goto_get_summary_page(self):
-        self.master.switch_frame(SummaryPage)
