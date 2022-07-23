@@ -16,6 +16,14 @@ class TestAPIInterfacer(unittest.TestCase):
         response = interfacer._execute_query(url)
         self.assertTrue('collectionName' in response)
 
+    def test_get_bill_text(self):
+        data_source = APIDataSource()
+        bill_id = 'BILLS-117hr7733rh'
+        text = data_source.get_bill_text(bill_id)
+        paragraph = 'To amend the Community Development Banking and Financial Institutions'
+        # self.assertIn(paragraph, text, "paragraph not in the text")
+        self.assertTrue(paragraph in text, 'paragraph not in the text')
+
 
 if __name__ == '__main__':
     unittest.main()
