@@ -1,0 +1,13 @@
+This like breaks the api
+https://api.govinfo.gov/collections/BILLS/2022-01-01T00:00:00Z/2022-01-31T00:00:00Z?offset=10000&pageSize=100&api_key=DEMO_KEY
+gives msg:  {"message":"Error encountered while processing this request ."}
+
+For parsing and text cleaning, need to...
+    remove words like <DELETED>, </DELETED>
+    remove ------------ breaks
+    handle docs without the <all> tag
+    remove XXth Congress
+    remove Calendar No. XX
+    remove
+
+BILLS-107hr2217rs
